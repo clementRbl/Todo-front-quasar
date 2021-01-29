@@ -1,11 +1,14 @@
 <template>
 
-    <div class="container-form q-pa-md q-mt-xl" style="width: 30%;">
-      <h3>S'enregistrer</h3>
+    <div class="q-pa-md q-mt-xl">
+      <div class="title-page">
+        <h3>S'enregistrer</h3>
+      </div>
+      
     <q-form
       @submit="onSubmit"
       @reset="onReset"
-      class="q-gutter-md"
+      class="form q-gutter-md"
     >
       <q-input
         filled
@@ -77,12 +80,20 @@ export default {
 
 <style lang="scss">
 
-  .flex-form {
+  .form {
+    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 
   .input-form {
-    width: 150%;
+    width: 50%;
+  }
+
+  .title-page {
+    display: flex;
+    justify-content: center;
   }
 </style>

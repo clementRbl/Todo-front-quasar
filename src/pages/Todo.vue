@@ -35,19 +35,17 @@
         <q-item-section>
           <q-item-label>{{task.title}}</q-item-label>
         </q-item-section>
-        <q-item-section>
-          <q-item-label>Urgent</q-item-label>
-          <q-checkbox v-model="task.urgent" class="pointer-events: none;" color="negative" />
-        </q-item-section>
          <q-item-section v-if="task.done"
           side>
-          <q-btn @click.stop="deleteTask(index)" flat round dense color="primary" icon="delete" />
+          <q-btn @click.stop="deleteTask(index)" flat round dense color="negative" icon="delete" />
         </q-item-section>
       </q-item>
 
     </q-list>
-      <div class="no-tasks absolute-center">
-        <div class="text-h1 text-primary text-center">Pas de taches</div>
+      <div 
+      v-if="!tasks.length"
+      class="no-tasks absolute-center">
+        <div class="text-h5 text-primary text-center">Pas de taches</div>
       </div>
 
 
@@ -116,6 +114,10 @@ export default {
       text-decoration: line-through;
       color: #bbb;
     }
+  }
+  .no-tasks {
+    opacity: 0.5;
+
   }
 
 </style>

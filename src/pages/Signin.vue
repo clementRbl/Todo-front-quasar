@@ -1,11 +1,13 @@
 <template>
 
-    <div class="container-form q-pa-md q-mt-xl" style="width: 30%;">
-      <div>Se connecter</div>
+    <div class="q-pa-md q-mt-xl">
+      <div class="title-page">
+        <h3>Connexion</h3>
+      </div>
     <q-form
       @submit="onSubmit"
       @reset="onReset"
-      class="q-gutter-md"
+      class="form q-gutter-md"
     >
       <q-input
         filled
@@ -78,13 +80,21 @@ export default {
 </script>
 
 <style lang="scss">
+  
+   .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .input-form {
+    width: 50%;
+  }
 
-  .flex-form {
+  .title-page {
     display: flex;
     justify-content: center;
   }
 
-  .input-form {
-    width: 150%;
-  }
 </style>
